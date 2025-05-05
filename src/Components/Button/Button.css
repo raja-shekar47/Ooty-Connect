@@ -1,0 +1,14 @@
+.primary-button{
+    background: var(--primary-btn-bg);
+    color: #fff;
+    border: 1px solid var(--primary-btn-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: var(--font-md);
+}
+
+.primary-button:hover{
+    background: var( --primary-btn-active-bg);
+}
