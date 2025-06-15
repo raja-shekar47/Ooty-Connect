@@ -1,7 +1,15 @@
 import React from "react";
 import "./Sidebar.css";
+import Button from "./Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    navigate("/login");
+  };
+
   return (
     <div className="sidebar">
       <h2>Ooty Connect 🌄</h2>
@@ -12,6 +20,11 @@ const Sidebar = () => {
       <a href="#">🔗 Shared</a>
       <a href="#">📍 Places to Visit</a>
       <a href="#">📝 About</a>
+
+      <br />
+      <br />
+      <br />
+      {/* <Button label={"Sign Out"} onClick={handleSignOut} /> */}
     </div>
   );
 };

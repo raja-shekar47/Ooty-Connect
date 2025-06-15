@@ -1,13 +1,21 @@
-import './App.css';
-import Sidebar from './Components/Sidebar';
-import AllPost from './Page/AllPost';
+import "./App.css";
+import Home from "./Page/home";
+import Layout from "./Page/Layout";
+import Login from "./Page/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+
   return (
-    <div className='main-page'>
-      <Sidebar />
-      <AllPost />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+        </Route>
+
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
