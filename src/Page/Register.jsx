@@ -1,21 +1,19 @@
 import React from "react";
 import { useState } from "react";
 import supabase from "../Helper/supabaseClient";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     setMessage("");
 
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signUp({
       email: email,
       password: password,
     });
@@ -25,7 +23,7 @@ const Login = () => {
       return;
     }
     if (data) {
-      navigate("/");
+      setMessage("user account created");
       return;
     }
 
@@ -35,7 +33,7 @@ const Login = () => {
 
   return (
     <div>
-      <h1>Login Page</h1>
+      <h1>Sign up Page</h1>
       <br />
       <br />
       <br />
@@ -52,15 +50,15 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="enter password"
         />
-        <button>Log in</button>
+        <button>Create Account</button>
         <br />
-        Don't Have Account Sign up
-        <Link to="/Register">
-          <button>Sign up</button>
+        Have already Account
+        <Link to="/login">
+          <button>Log in</button>
         </Link>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Register;

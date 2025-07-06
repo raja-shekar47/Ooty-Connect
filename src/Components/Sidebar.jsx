@@ -7,7 +7,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const handleSignOut = () => {
-    navigate("/login");
+    navigate("/Register");
   };
 
   return (
@@ -18,13 +18,13 @@ const Sidebar = () => {
       <a href="#">🧍 Profile</a>
       <a href="#">❤️ Liked Posts</a>
       <a href="#">🔗 Shared</a>
-      <a href="#">📍 Places to Visit</a>
+      <a href="#" onClick={handleSignOut}>📍 Places to Visit</a>
       <a href="#">📝 About</a>
 
       <br />
       <br />
       <br />
-      {/* <Button label={"Sign Out"} onClick={handleSignOut} /> */}
+      <Button label={"Sign Out"} onClick={handleSignOut} />
     </div>
   );
 };

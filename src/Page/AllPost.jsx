@@ -1,6 +1,5 @@
 import ImageUpload from "./ImageUpload";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
 
 import Button from "../Components/Button/Button";
 import Modal from "../Components/Modal/Modal";
@@ -11,11 +10,8 @@ const AllPost = () => {
   const [posts, setPosts] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const navigate = useNavigate();
 
-  const handleSignOut = () => {
-    navigate("/login");
-  };
+
 
   
   useEffect(() => {
@@ -43,7 +39,6 @@ const AllPost = () => {
   console.log("posts", posts);
   return (
     <div className="bg-white shadow-md rounded-xl p-4 m-2">
-      {/* <Button label={"Sign Out"} onClick={handleSignOut} /> */}
 
       <h1>Posts</h1>
       <Button label="Add Post" onClick={handleSubmit} />
