@@ -1,0 +1,44 @@
+.Gallery-outer {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.gallery-sidebar {
+  width: 300px;
+  background: rgb(129, 16, 235);
+  height: calc(100% - 2rem);
+  padding: 1rem;
+}
+
+.main-section {
+  width: calc(100vw - 360px);
+  background: rgb(229, 229, 229);
+  height: 90vh;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.image-element {
+  width: 300px;
+  height: auto;
+}
+
+.dropped-item {
+  position: relative;
+  width: fit-content;
+  border: 1px dotted transparent;
+}
+
+.dropped-item:hover {
+  border: 1px dotted gray;
+}
+
+.dropped-item .edit-btn-wrapper {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: none;
+}
+.dropped-item:hover .edit-btn-wrapper {
+  display: flex;
+}

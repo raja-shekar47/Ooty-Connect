@@ -1,17 +1,9 @@
 import { useState } from "react";
-import Button from "../Components/Button/Button";
+import Button from "../../../Components/Button/Button";
 
 const ImageUpload = ({ onSubmit }) => {
   const [postData, setPostData] = useState({ title: "", imageData: null });
   const [error, setError] = useState("");
-
-  // const handleTitleChange = (e) => {
-  //   const newObj = {
-  //     ...postData,
-  //     title: e.target.value,
-  //   };
-  //   setPostData(newObj);
-  // };
 
   const handleTitleChange = (e) => {
     const title = e.target.value;
@@ -28,7 +20,7 @@ const ImageUpload = ({ onSubmit }) => {
       setError("Minimum 4 characters required");
     }
   };
-  
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -48,7 +40,7 @@ const ImageUpload = ({ onSubmit }) => {
   return (
     <div style={{ padding: "20px" }}>
       <h2>Add New Post</h2>
-      <span style={{color: "red"}}>{error}</span>
+      <span style={{ color: "red" }}>{error}</span>
       <input
         type="text"
         placeholder="Enter title"
