@@ -1,14 +1,9 @@
-import './App.css';
-import Sidebar from './Components/Sidebar';
-import AllPost from './Page/AllPost';
+import "./App.css";
+
+import Router from "./Router/Router.jsx";
 
 function App() {
-  return (
-    <div className='main-page'>
-      <Sidebar />
-      <AllPost />
-    </div>
-  );
+  return <Router />;
 }
 
 export default App;

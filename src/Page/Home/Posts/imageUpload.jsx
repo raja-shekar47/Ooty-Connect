@@ -1,15 +1,24 @@
 import { useState } from "react";
-import Button from "../Components/Button/Button";
+import Button from "../../../Components/Button/Button";
 
-const ImageUpload = ({onSubmit}) => {
+const ImageUpload = ({ onSubmit }) => {
   const [postData, setPostData] = useState({ title: "", imageData: null });
-  
+  const [error, setError] = useState("");
+
   const handleTitleChange = (e) => {
-    const newObj = {
+    const title = e.target.value;
+
+    setPostData({
       ...postData,
-      title: e.target.value,
-    };
-    setPostData(newObj);
+      title: title,
+    });
+
+    const pattern = /^.{4,}$/;
+    if (pattern.test(title)) {
+      setError("");
+    } else {
+      setError("Minimum 4 characters required");
+    }
   };
 
   const handleImageChange = (e) => {
@@ -26,11 +35,12 @@ const ImageUpload = ({onSubmit}) => {
 
   const handleSubmit = () => {
     onSubmit(postData);
-  }
+  };
 
   return (
     <div style={{ padding: "20px" }}>
       <h2>Add New Post</h2>
+      <span style={{ color: "red" }}>{error}</span>
       <input
         type="text"
         placeholder="Enter title"
@@ -50,7 +60,7 @@ const ImageUpload = ({onSubmit}) => {
           style={{ width: "300px", borderRadius: "8px", marginTop: "16px" }}
         />
       )}
-      <Button label="submit" onClick={handleSubmit}/>
+      <Button label="submit" onClick={handleSubmit} />
     </div>
   );
 };

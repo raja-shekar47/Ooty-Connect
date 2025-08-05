@@ -1,17 +1,31 @@
 import React from "react";
 import "./Sidebar.css";
+import Button from "./Button/Button";
+import { useNavigate, Link } from "react-router-dom";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    navigate("/Register");
+  };
+
   return (
     <div className="sidebar">
       <h2>Ooty Connect 🌄</h2>
-      <a href="#">🏠 Home</a>
-      <a href="#">📸 Add Post</a>
-      <a href="#">🧍 Profile</a>
-      <a href="#">❤️ Liked Posts</a>
-      <a href="#">🔗 Shared</a>
-      <a href="#">📍 Places to Visit</a>
-      <a href="#">📝 About</a>
+      <div>
+        <Link to="/">🏠 Home</Link>
+        <Link to="/add-post">📸 Add Post</Link>
+        <Link to="/profile">🧍 Profile</Link>
+        <Link to="/liked">❤️ Liked Posts</Link>
+        <Link to="/shared">🔗 Shared</Link>
+        <Link to="/Gallery">🔗 Gallery</Link>
+      </div>
+
+      <br />
+      <br />
+      <br />
+      <Button label={"Sign Out"} onClick={handleSignOut} />
     </div>
   );
 };
