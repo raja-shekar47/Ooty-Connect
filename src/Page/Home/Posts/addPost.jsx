@@ -5,6 +5,8 @@ import Modal from "../../../Components/Modal/Modal";
 import ImageUpload from "./imageUpload";
 import PostCard from "./postCard";
 
+import "../Home.css"
+
 const AddPost = ({ posts, setPosts, isModalOpen, setIsModalOpen }) => {
   useEffect(() => {
     const existingPosts = JSON.parse(localStorage.getItem("posts")) || [];
@@ -12,7 +14,7 @@ const AddPost = ({ posts, setPosts, isModalOpen, setIsModalOpen }) => {
       (post) => post && post.imageData && post.title
     );
     setPosts(filteredPosts);
-  }, []);
+  }, [setPosts]);
 
   // open modal and post
   const handleSubmit = () => {
@@ -29,7 +31,7 @@ const AddPost = ({ posts, setPosts, isModalOpen, setIsModalOpen }) => {
 
   console.log("posts", posts);
   return (
-    <div className="bg-white shadow-md rounded-xl p-4 m-2">
+    <div className="page-wrapper">
       <h1>Posts</h1>
 
       <Button label="Add Post" onClick={handleSubmit} />

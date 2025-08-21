@@ -7,7 +7,7 @@ import Canvas from './Ccanvas';
 const Visit = () => {
   return (
     <DndProvider backend={HTML5Backend}>
-      <div style={{ display: "flex", height: "100vh" }}>
+      <div style={{ display: "flex", height: "100vh", width: "100%" }}>
         <CSidebar />
         <Canvas/>
       </div>

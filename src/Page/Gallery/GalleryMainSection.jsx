@@ -1,4 +1,4 @@
-import Button from "../../../Components/Button/Button";
+import Button from "../../Components/Button/Button";
 
 const GalleryMainSection = ({ droppedItems, onDropItem, onDeleteItem }) => {
   const handleDrop = (e) => {

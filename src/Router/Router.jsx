@@ -1,21 +1,29 @@
-import React from 'react'
-import { Route, Routes } from 'react-router';
-import Home from '../Page/Home/Home';
-import Login from '../Page/Login';
-import Register from '../Page/Register';
-import Visit from '../Page/Visit/Visit';
-import Gallery from '../Page/Visit/Gallery/Gallery';
+import React from "react";
+import { Route, Routes } from "react-router";
+import Login from "../Page/Login";
+import Register from "../Page/Register";
+import Visit from "../Page/Visit/Visit";
+import PageDashboard from "../Layout/PageDashboard";
+import Home from "../Page/Home/Home";
+import Gallery from "../Page/Gallery/Gallery";
 
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/Register" element={<Register />} />
-      <Route path="/visit" element={<Visit />} />
-      <Route path="Gallery" element={<Gallery />} />
+      {/* public routes */}
+      <Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
+      </Route>
+
+      {/* private routes */}
+      <Route path="/" element={<PageDashboard />}>
+        <Route index element={<Home />} /> {/* default page */}
+        <Route path="/visit" element={<Visit />} />
+        <Route path="Gallery" element={<Gallery />} />
+      </Route>
     </Routes>
   );
-}
+};
 
-export default Router
+export default Router;
