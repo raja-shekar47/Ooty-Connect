@@ -1,0 +1,8 @@
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+}
+
+.main-page-outer{
+  width: calc(100vw - 250px);
+}

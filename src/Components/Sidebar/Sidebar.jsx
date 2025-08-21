@@ -1,7 +1,7 @@
 import React from "react";
 import "./Sidebar.css";
-import Button from "./Button/Button";
 import { useNavigate, Link } from "react-router-dom";
+import Button from "../Button/Button";
 
 const Sidebar = () => {
   const navigate = useNavigate();
